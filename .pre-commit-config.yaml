@@ -15,4 +15,3 @@ repos:
         name: gitleaks-secrets-scan
         entry: gitleaks git --pre-commit --staged
         language: system
-        pass_filenames: false
