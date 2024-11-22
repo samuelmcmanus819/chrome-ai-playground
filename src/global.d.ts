@@ -8,6 +8,7 @@ declare namespace ai {
       tone?: string;
       length?: string;
       sharedContext?: string;
+      format?: string;
   }
 
   const summarizer: {

@@ -165,6 +165,7 @@
       <select bind:value={selectedOption}>
         <option value="eli5">eli5</option>
         <option value="tldr">tl;dr</option>
+        <option value="notes">notes</option>
       </select>
       <button on:click={parseText}>Parse Text</button>
     </div>
@@ -180,6 +181,7 @@
     <select bind:value={selectedOption} on:change={handleSummarizationModeChange}>
       <option value="eli5">eli5</option>
       <option value="tldr">tl;dr</option>
+      <option value="notes">notes</option>
     </select>
     <textarea
       bind:value={outputText}
