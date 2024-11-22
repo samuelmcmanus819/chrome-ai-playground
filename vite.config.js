@@ -7,11 +7,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        content: 'src/content.ts',
+        background: 'src/background.ts',
         popup: resolve(__dirname, 'index.html'), // Specify the input HTML file
       },
       output: {
         entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
         assetFileNames: '[name].[ext]',
         dir: 'dist', // Set output directory
       },

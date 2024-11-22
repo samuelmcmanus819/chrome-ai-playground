@@ -8,5 +8,10 @@
     "dev": "vite",
     "build": "vite build"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@tsconfig/svelte": "^5.0.4",
+    "svelte-preprocess": "^6.0.3",
+    "typescript": "^5.6.3"
+  }
 }

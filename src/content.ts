@@ -1,5 +1,5 @@
 // Function to request summarization from the background script
-const requestSummary = (text) => {
+const requestSummary = (text: string) => {
     chrome.runtime.sendMessage({ action: 'tldr', text }, (response) => {
         if (response && response.rewrite) {
             console.log('Summary:', response.rewrite);
@@ -8,7 +8,7 @@ const requestSummary = (text) => {
     });
 }
 
-const requestEli5 = (text) => {
+const requestEli5 = (text: string) => {
     chrome.runtime.sendMessage({ action: 'eli5', text }, (response) => {
         if (response && response.rewrite) {
             console.log('Summary:', response.rewrite);
