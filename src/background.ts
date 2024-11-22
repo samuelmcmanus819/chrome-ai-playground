@@ -1,9 +1,9 @@
-const tldr = async(text) => {
+const tldr = async(text: string) => {
   const summarizer = await ai.summarizer.create({ type: "tl;dr", length: 'short' });
   return await summarizer.summarize(text);
 }
 
-const eli5 = async(text) => {
+const eli5 = async(text: string) => {
   const summarizer = await ai.summarizer.create({ type: "tl;dr", tone: 'formal', length: 'medium' , sharedContext: 'The reader is 5 years old'});
   return await summarizer.summarize(text)
 }

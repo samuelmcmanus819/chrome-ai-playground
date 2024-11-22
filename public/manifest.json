@@ -3,7 +3,7 @@
     "name": "Svelte Chrome Extension",
     "version": "1.0",
     "description": "A basic Chrome extension built with Svelte and Vite.",
-    "permissions": ["storage"],
+    "permissions": ["storage", "contextMenus", "activeTab"],
     "host_permissions": ["*://*/*"],
     "background": {
       "service_worker": "background.js"
