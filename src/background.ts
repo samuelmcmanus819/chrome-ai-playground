@@ -8,7 +8,7 @@ const getChunks = (text: string) => {
 }
 
 //If the text is too long to fit in the summarizer,
-//then split
+//then split text into chunks and reduce until they're the correct length
 const initialSummarization = async(text: string) => {
   let chunks = getChunks(text);
   let outText = "";
