@@ -1,13 +1,26 @@
-//If the text is too long to fit in the summarizer, then split it in half first
+const chunkSize = 3000;
+const getChunks = (text: string) => {
+  const chunks = [];
+  for (let i = 0; i < text.length; i += chunkSize) {
+    chunks.push(text.slice(i, i + chunkSize));
+  }
+  return chunks;
+}
+
+//If the text is too long to fit in the summarizer,
+//then split
 const initialSummarization = async(text: string) => {
-  if (text.length > 6000) {
-    const firstHalf = text.slice(0, text.length / 2);
-    const secondHalf = text.slice(text.length / 2);
-    const initialSummarizer = await ai.summarizer.create({ type: 'tl;dr', length: 'long' });
-    const firstHalfText = await initialSummarizer.summarize(firstHalf);
-    const secondHalfText = await initialSummarizer.summarize(secondHalf);
-    return await initialSummarizer.summarize(firstHalfText + secondHalfText);
-  } else { return text }
+  let chunks = getChunks(text);
+  let outText = "";
+  const initialSummarizer = await ai.summarizer.create({ type: 'tl;dr', length: 'long' });
+  while(chunks.length > 1) {
+    for (let chunk of chunks) {
+      outText += await initialSummarizer.summarize(chunk);
+    }
+    chunks = getChunks(outText);
+    text = outText;
+  }
+  return text;
 }
 
 const tldr = async(text: string) => {
@@ -23,9 +36,14 @@ const eli5 = async(text: string) => {
 }
 
 const notes = async(text: string) => {
-  text = await initialSummarization(text);
+  const chunks = getChunks(text);
+  let outText = "";
   const summarizer = await ai.summarizer.create({ type: "key-points", format: 'plain-text' });
-  return await summarizer.summarize(text)
+  for (const chunk of chunks) {
+    outText += await summarizer.summarize(chunk);
+  }
+
+  return outText;
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
