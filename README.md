@@ -1,6 +1,6 @@
-# Chrome AI Playground
+# Chrome AI Rewriter Multitool
 
-Welcome to the **Chrome AI Playground**! This repository demonstrates the use of Chrome's experimental features to run AI models locally within the browser with a Chrome extension. Leverage cutting-edge technology to explore the potential of in-browser AI without relying on server-side computation.
+Welcome to the **Chrome AI Rewriter Multitool**! This repository demonstrates the use of Chrome's experimental features to run AI models locally within the browser with a Chrome extension. Leverage cutting-edge technology to explore the potential of in-browser AI without relying on server-side computation.
 
 ## Features
 
