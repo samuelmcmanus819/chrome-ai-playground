@@ -1,0 +1,15 @@
+{
+    "name": "Chrome AI Summarizer",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".",
+    },
+    "remoteUser": "root",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "amazonwebservices.amazon-q-vscode",
+            ]
+        }
+    }
+}
