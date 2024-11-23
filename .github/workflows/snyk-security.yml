@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+env:
+  # This is where you will need to introduce the Snyk API token created with your Snyk account
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
 jobs:
   snyk:
     permissions:
@@ -22,10 +26,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-        env:
-          # This is where you will need to introduce the Snyk API token created with your Snyk account
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
         # Runs Snyk Code (SAST) analysis and uploads result into GitHub.
         # Use || true to not fail the pipeline
