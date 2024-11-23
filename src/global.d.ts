@@ -103,32 +103,4 @@ declare namespace chrome {
             message?: string; // Error message, if an error occurred
         };
     }
-
-  namespace contextMenus {
-      interface OnClickData {
-          menuItemId: string | number;
-          parentMenuItemId?: string | number;
-          mediaType?: string;
-          linkUrl?: string;
-          srcUrl?: string;
-          pageUrl?: string;
-          frameUrl?: string;
-          selectionText?: string;
-          editable: boolean;
-          wasChecked?: boolean;
-          checked?: boolean;
-      }
-
-      interface OnClickedListener {
-          (info: OnClickData, tab?: chrome.tabs.Tab): void;
-      }
-
-      interface OnClickedEvent {
-          addListener(listener: OnClickedListener): void;
-          removeListener(listener: OnClickedListener): void;
-          hasListener(listener: OnClickedListener): boolean;
-      }
-
-      const onClicked: OnClickedEvent;
-  }
 }
