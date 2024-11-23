@@ -1,3 +1,4 @@
 dist/
 node_modules/
 snyk-code.sarif
+.dccache

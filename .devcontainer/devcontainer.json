@@ -2,7 +2,7 @@
     "name": "Chrome AI Summarizer",
     "build": {
         "dockerfile": "Dockerfile",
-        "context": ".",
+        "context": "."
     },
     "remoteUser": "root",
     "customizations": {
