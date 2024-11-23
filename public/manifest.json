@@ -3,8 +3,7 @@
     "name": "Chrome AI Rewriter Multitool",
     "version": "1.0",
     "description": "An extension which leverages some experimental features to run AI in the browser",
-    "permissions": ["storage", "activeTab"],
-    "host_permissions": ["*://*/*"],
+    "permissions": ["activeTab"],
     "background": {
       "service_worker": "background.js"
     },
